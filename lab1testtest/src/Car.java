@@ -86,11 +86,6 @@ public abstract class Car implements Movable{
     public void turnRight(){
         dir += 10;
     }
-
-    public static void main(String[] args) {
-        Saab95 saab = new Saab95();
-        System.out.println(saab.currentSpeed);
-
-
-    }
 }
+
+
