@@ -80,11 +80,11 @@ public abstract class Car implements Movable{
     }
 
     public void turnLeft(){
-
+        dir -= 10;
     }
     
     public void turnRight(){
-        
+        dir += 10;
     }
 
     public static void main(String[] args) {
