@@ -24,6 +24,9 @@ public abstract class Car implements Movable{
         posY = 0;
         dir = 0;
     }
+    public String getModelName(){
+        return modelName;
+    }
 
 
     public void incrementSpeed(double amount){
