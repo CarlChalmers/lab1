@@ -24,29 +24,38 @@ public abstract class Car implements Movable{
         posY = 0;
         dir = 0;
     }
+
     public String getModelName(){
         return modelName;
     }
-
-
     public void incrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() + speedFactor() * amount;
+        if(currentSpeed > enginePower){
+            currentSpeed = enginePower;
+        }
     }
 
     public void decrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() - speedFactor() * amount;
+        if(currentSpeed < 0){
+            currentSpeed = 0;
+        }
     }
-    
+
     public abstract double speedFactor();
 
     // TODO fix this method according to lab pm
     public void gas(double amount){
-        incrementSpeed(amount);
+        if(amount >= 0 && amount <= 1){
+            incrementSpeed(amount);
+        }
     }
 
     // TODO fix this method according to lab pm
     public void brake(double amount){
-        decrementSpeed(amount);
+        if(amount >= 0 && amount <= 1){
+            decrementSpeed(amount);
+        }
     }
     public int getNrDoors(){
         return nrDoors;
@@ -64,15 +73,15 @@ public abstract class Car implements Movable{
     }
 
     public void setColor(Color clr){
-	    color = clr;
+        color = clr;
     }
 
     public void startEngine(){
-	    currentSpeed = 0.1;
+        currentSpeed = 0.1;
     }
 
     public void stopEngine(){
-	    currentSpeed = 0;
+        currentSpeed = 0;
     }
 
     public void move(){
@@ -85,10 +94,16 @@ public abstract class Car implements Movable{
     public void turnLeft(){
         dir -= 10;
     }
-    
+
     public void turnRight(){
         dir += 10;
     }
+
+    public static void main(String[] args) {
+        Saab95 saab = new Saab95();
+        System.out.println(saab.currentSpeed);
+        saab.gas(-10);
+        System.out.println(saab.currentSpeed);
+
+    }
 }
-
-

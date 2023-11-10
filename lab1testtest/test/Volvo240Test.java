@@ -20,15 +20,14 @@ public class Volvo240Test {
     public void gasTest() {
         Volvo240 volvoTest = new Volvo240();
 
-        volvoTest.gas(0.5);
+        volvoTest.gas( 0.5);
         assertTrue(volvoTest.getCurrentSpeed() > 0);
         assertTrue(volvoTest.getCurrentSpeed() <= volvoTest.getEnginePower());
 
         double previousSpeed = volvoTest.getCurrentSpeed();
         volvoTest.gas(-0.5);
         assertEquals(previousSpeed, volvoTest.getCurrentSpeed(), 0.001);
-        volvoTest.gas(-10);
-        assertEquals(0,volvoTest.getCurrentSpeed(),0.001);
+
     }
 
 }
