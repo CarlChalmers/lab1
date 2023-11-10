@@ -29,5 +29,15 @@ public class Volvo240Test {
         assertEquals(previousSpeed, volvoTest.getCurrentSpeed(), 0.001);
 
     }
-
+    @Test
+    public void brakeTest() {
+        Volvo240 volvoTest = new Volvo240();
+        volvoTest.gas(0.8);
+        double previousSpeed = volvoTest.getCurrentSpeed();
+        volvoTest.brake(0.5);
+        assertTrue(volvoTest.getCurrentSpeed() < previousSpeed);
+        previousSpeed = volvoTest.getCurrentSpeed();
+        volvoTest.brake(-0.5);
+        assertEquals(previousSpeed, volvoTest.getCurrentSpeed(), 0.001);
+    }
 }
