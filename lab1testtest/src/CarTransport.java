@@ -40,15 +40,15 @@ public class CarTransport extends Truck{
 
     @Override
     public void lowerBed(){
-        if(currentSpeed == 0){
+        if(getCurrentSpeed() == 0){
             this.bedDown = true;
         }
     }
 
     @Override
     public void move(){
-        double deltaX = currentSpeed * Math.cos(this.getDir());
-        double deltaY = currentSpeed * Math.sin(this.getDir());
+        double deltaX = getCurrentSpeed()  * Math.cos(this.getDir());
+        double deltaY = getCurrentSpeed()  * Math.sin(this.getDir());
         double xPos = this.getX() + deltaX;
         double yPos = this.getY() + deltaY;
         this.setX(xPos);

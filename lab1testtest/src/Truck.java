@@ -20,7 +20,7 @@ public abstract class Truck extends Vehicle {
     }
 
     public void raiseBed(){
-        if(currentSpeed == 0){
+        if(getCurrentSpeed() == 0){
         if(angle > 65){
             angle = 70;
         }else{

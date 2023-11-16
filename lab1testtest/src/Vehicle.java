@@ -5,7 +5,7 @@ public abstract class Vehicle implements Movable{
 
     private int nrDoors; // Number of doors on the car
     private double enginePower; // Engine power of the car
-    public double currentSpeed; // The current speed of the car
+    private double currentSpeed; // The current speed of the car
     private Color color; // Color of the car
     private String modelName; // The car model name
     private double posX;
@@ -25,6 +25,7 @@ public abstract class Vehicle implements Movable{
         this.dir = 0;
     }
 
+    
     public double getDir(){
         return this.dir;
     }
