@@ -40,4 +40,13 @@ public class Volvo240Test {
         volvoTest.brake(-0.5);
         assertEquals(previousSpeed, volvoTest.getCurrentSpeed(), 0.001);
     }
+    @Test
+    public void workshopTest(){
+        Volvo240 volvoTest = new Volvo240();
+        Saab95 saabTest = new Saab95();
+        WorkShop<Volvo240> volvo240WorkShop = new WorkShop<>(10);
+        volvo240WorkShop.acceptCar(volvoTest);
+        //volvo240WorkShop.acceptCar(saabTest);
+
+    }
 }
