@@ -8,13 +8,20 @@ public class CarTransport extends Truck{
     public CarTransport(){
         super(2,250,0,Color.red,"Transport");
         stopEngine();
+        this.currentLoad = new Stack<>();
     }
-
-    public void unloadCar(Car car){
+    public boolean getBedDown(){
+        return this.bedDown;
+    }
+    public Stack<Car> getCurrentLoad(){
+        return this.currentLoad;
+    }
+    public Car unloadCar(){
         if(bedDown){
-            currentLoad.pop();
+            return currentLoad.pop();
         }else{
             System.out.println("Bed not down");
+            return null;
         }
     }
 

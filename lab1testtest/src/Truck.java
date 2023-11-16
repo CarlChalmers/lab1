@@ -2,7 +2,7 @@ import java.awt.*;
 
 
 public abstract class Truck extends Vehicle {
-    public float angle;
+    private float angle;
 
     
     public Truck(int doors, int ePower, int cSpeed,Color col, String name){
