@@ -45,7 +45,11 @@ public class Volvo240Test {
         Volvo240 volvoTest = new Volvo240();
         Saab95 saabTest = new Saab95();
         WorkShop<Volvo240> volvo240WorkShop = new WorkShop<>(10);
+        WorkShop<Car> carWorkShop = new WorkShop<>(10);
         volvo240WorkShop.acceptCar(volvoTest);
+        carWorkShop.acceptCar(saabTest);
+        carWorkShop.acceptCar(volvoTest);
+        carWorkShop.removeCar(volvoTest);
         //volvo240WorkShop.acceptCar(saabTest);
 
     }
@@ -77,7 +81,7 @@ public class Volvo240Test {
         assertTrue(scaniaTest.getCurrentSpeed() == 0);
         scaniaTest.raiseBed();
         scaniaTest.gas(0.5);
-        assertFalse(scaniaTest.getCurrentSpeed()> 0);
+        assertTrue(scaniaTest.getCurrentSpeed()== 0);
 
     }
     @Test
