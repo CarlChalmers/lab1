@@ -1,7 +1,7 @@
 import java.awt.Color;
 import java.util.Stack;
 
-public class CarTransport extends Truck{
+public class CarTransport extends Truck implements Bed{
     private Stack<Car> currentLoad;
     private boolean bedDown;
     
@@ -40,12 +40,10 @@ public class CarTransport extends Truck{
         return false;
     }
 
-    @Override
     public void raiseBed(){
         this.bedDown = false;
     }
 
-    @Override
     public void lowerBed(){
         if(getCurrentSpeed() == 0){
             this.bedDown = true;
@@ -66,5 +64,14 @@ public class CarTransport extends Truck{
             car.setY(yPos);
         }
     }
+    
+    @Override
+    public double speedFactor(){
+        if(bedDown){
+            return getEnginePower() * 0.01 * 1;
+        }
+        return 0;
+    }
+    
 
 }
